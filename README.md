@@ -1,5 +1,7 @@
 # control-plane
 
+## What this is
+
 One person's public record of building a security engineering
 program with an AI agent doing the typing and a human deciding
 everything.
@@ -14,7 +16,7 @@ What is in it:
 
 - **manifest-identity**: an inventory and review tool for cloud service
   accounts and roles. Import snapshots, see who owns what, run review
-  campaigns. 157 tests, 64 recorded decisions, five outside ratings.
+  campaigns. 241 tests, 74 recorded decisions, five outside ratings.
 - **build-doctrine**: the rulebook the program builds under, and the
   commands that score any repository against it.
 - **secure-expense-mvp**: a small finished application, hardened and
@@ -24,6 +26,13 @@ What is in it:
 
 The rendered site is this repository, served at
 https://tltaylor1.github.io.
+
+What stands behind it: the agent proposes under its own installed
+identity and a human approval lands every change, so the author and the
+approver are two different actors. Every phase plan is published before
+the work starts, so a change of plan is a recorded decision rather than a
+quiet edit. Every agent mistake is written down with what caught it, and
+the ones that changed a rule say which.
 
 ## The parts
 
