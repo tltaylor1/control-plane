@@ -1,0 +1,8 @@
+# The documentation site, generated at build time and never committed
+docs/site/
+site/
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -22,7 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = "https://raw.githubusercontent.com/manifest-identity/manifest-identity/main/README.md"
 STATED = re.compile(r"more than (\d+) tests, (\d+) recorded(\s+)decisions")
-FILES = ["README.md", "index.html"]
+FILES = ["README.md"]
 STEP = 100
 
 
