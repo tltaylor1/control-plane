@@ -28,8 +28,7 @@ PAGES = [
     ("PHASE-3.md", "01-phase-3.md"),
     ("MONITORING.md", "02-monitoring.md"),
     ("BCDR.md", "03-recovery.md"),
-    ("PIPELINES.md", "04-pipelines.md"),
-    ("DECISIONS.md", "05-decisions.md"),
+    ("DECISIONS.md", "04-decisions.md"),
 ]
 NOT_PAGES: set[str] = set()
 ASSET_DIRS = {"diagrams": "diagrams", "images": "images"}

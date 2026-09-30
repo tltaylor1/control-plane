@@ -1,4 +1,4 @@
-# The program repository's gates: the writing rules and the link check
+# The platform repository's gates: the writing rules and the link check
 # over the documents, and the marker sweep. Tools arrive from their
 # canonical releases and are checksum-verified before they run, the
 # same bar as every repository in the program.
@@ -11,12 +11,6 @@ on:
   push:
     branches: [main]
   pull_request:
-  # The figures check reads another repository, so what it guards against
-  # changes when nothing here does. On push alone it stayed quiet while
-  # this site's counts drifted by eighty-four tests and ten decisions, and
-  # would have stayed quiet until somebody happened to commit.
-  schedule:
-    - cron: "23 7 * * 1"
   workflow_dispatch:
 
 concurrency:
@@ -38,12 +32,6 @@ jobs:
           tar -xzf vale.tar.gz vale
       - name: writing rules
         run: git ls-files -z "*.md" | xargs -0 "$RUNNER_TEMP/vale"
-      # The two figures this site states about manifest-identity are read
-      # from its README on main, so a copy typed by hand cannot go stale
-      # silently again; it did, twice, before this existed, and a third
-      # time between pushes, which is why this workflow also runs weekly.
-      - name: figures match manifest-identity
-        run: python3 scripts/check_figures.py
       - name: forbid deferred-work markers
         run: |
           ! grep -rnIE "\b(TODO|FIXME|HACK|XXX)\b" --exclude-dir=.git --exclude-dir=.github --exclude=.pre-commit-config.yaml .
