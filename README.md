@@ -59,8 +59,10 @@ It will have:
 secure-expense-mvp is a small application built before the program as
 a learning exercise, kept as a reference.
 
-The rendered site is this repository, served at
-https://tltaylor1.github.io.
+This repository is the program's home. Its documents render as a site
+with side navigation and search at
+<https://tltaylor1.github.io/control-plane/>, generated from these files
+at build time; the account's own page is at <https://tltaylor1.github.io>.
 
 ## The parts
 

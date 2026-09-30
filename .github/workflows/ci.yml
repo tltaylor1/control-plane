@@ -48,6 +48,17 @@ jobs:
         run: |
           ! grep -rnIE "\b(TODO|FIXME|HACK|XXX)\b" --exclude-dir=.git --exclude-dir=.github --exclude=.pre-commit-config.yaml .
 
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: every document is a page and every anchor resolves
+        run: python3 -m unittest discover -s tests
+      - name: the pages generate
+        run: python3 scripts/build_docs.py
+
   links:
     runs-on: ubuntu-latest
     steps:
@@ -63,7 +74,7 @@ jobs:
       # Offline on purpose: the pipeline checks the cross-references
       # inside this repository and fetches nothing.
       - name: check internal links
-        run: git ls-files -z "*.md" "*.html" | xargs -0 "$RUNNER_TEMP/lychee-x86_64-unknown-linux-gnu/lychee" --offline --no-progress --include-fragments
+        run: git ls-files -z "*.md" | xargs -0 "$RUNNER_TEMP/lychee-x86_64-unknown-linux-gnu/lychee" --offline --no-progress --include-fragments
 
   doctrine:
     runs-on: ubuntu-latest
@@ -74,7 +85,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: tltaylor1/build-doctrine
-          ref: 110a64984ad306f4c502b571a6d359afb5cd4c81
+          ref: a235068d87c618bc7d8b70cf83a52c071056df80
           path: doctrine
           persist-credentials: false
       - name: no retired project name in active text

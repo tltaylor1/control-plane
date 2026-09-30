@@ -1,0 +1,44 @@
+# The documentation site: generated pages under docs/site, produced by
+# scripts/build_docs.py from the root documents at build time, so the
+# site has no source of its own to drift. Strict mode turns a broken
+# link or anchor into a failed build.
+site_name: control-plane
+site_description: A security engineering program built in public, its rulebook, its application, and its cloud deployment
+site_url: https://tltaylor1.github.io/control-plane/
+repo_url: https://github.com/tltaylor1/control-plane
+repo_name: tltaylor1/control-plane
+docs_dir: docs/site
+site_dir: site
+strict: true
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - attr_list
+  - pymdownx.superfences
+
+validation:
+  anchors: warn
+  absolute_links: warn
+  unrecognized_links: warn
