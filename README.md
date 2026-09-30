@@ -14,9 +14,9 @@ What is in it:
 
 - **manifest-identity**: two records about every identity in a cloud
   estate, what it holds and what a named person said it may hold, and
-  the difference between them. Six providers read natively, any other
+  the difference between them. Seven providers read natively, any other
   through a table; review campaigns driven by the calendar, the delta,
-  or expiry. more than 400 tests, 82 recorded decisions, five outside ratings.
+  or expiry. more than 400 tests, 84 recorded decisions, five outside ratings.
 - **build-doctrine**: the rulebook the program builds under, and the
   commands that score any repository against it.
 - **secure-expense-mvp**: a small finished application, hardened and
@@ -31,7 +31,7 @@ https://tltaylor1.github.io.
 
 | Repository | What it is, and what it proves |
 |---|---|
-| [manifest-identity](https://github.com/manifest-identity/manifest-identity) | Governance for the identities nobody owns: what each identity holds, read from six providers' own exports, beside what a named person said it may hold, and every difference put in front of the person who can answer it. The program's flagship: building in motion, with the decision record growing under load |
+| [manifest-identity](https://github.com/manifest-identity/manifest-identity) | Governance for the identities nobody owns: what each identity holds, read from seven providers' own exports, beside what a named person said it may hold, and every difference put in front of the person who can answer it. The program's flagship: building in motion, with the decision record growing under load |
 | [secure-expense-mvp](https://github.com/tltaylor1/secure-expense-mvp) | A small expense tool, finished and hardened: every request-path gate tied to the failure it prevents, mutation-tested, complete on purpose |
 | [build-doctrine](https://github.com/tltaylor1/build-doctrine) | The doctrine: standards where every rule records the incident that produced it, the enforcement mapping, and the promotion path from human check to automated gate |
 | aws-platform | Arrives with Phase 3: generic Terraform modules for an organization, its baseline, account vending, and keyless deploy federation |
