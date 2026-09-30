@@ -3,7 +3,7 @@
 # site has no source of its own to drift. Strict mode turns a broken
 # link or anchor into a failed build.
 site_name: control-plane
-site_description: A security engineering program built in public, its rulebook, its application, and its cloud deployment
+site_description: The platform the applications run on, an AWS estate as code with every security choice explained
 site_url: https://tltaylor1.github.io/control-plane/
 repo_url: https://github.com/tltaylor1/control-plane
 repo_name: tltaylor1/control-plane

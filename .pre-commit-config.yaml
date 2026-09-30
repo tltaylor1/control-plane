@@ -23,10 +23,3 @@ repos:
         # The pipeline names the markers in order to forbid them, as this
         # file does; both are excluded here as the pipeline excludes them.
         exclude: '^(\.pre-commit-config\.yaml|\.github/workflows/ci\.yml)$'
-      # The figures this site states about manifest-identity are checked
-      # against its README on main, the same gate the pipeline runs.
-      - id: figures-match
-        name: figures match manifest-identity
-        entry: python3 scripts/check_figures.py
-        language: system
-        pass_filenames: false
