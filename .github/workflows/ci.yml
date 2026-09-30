@@ -64,3 +64,18 @@ jobs:
       # inside this repository and fetches nothing.
       - name: check internal links
         run: git ls-files -z "*.md" "*.html" | xargs -0 "$RUNNER_TEMP/lychee-x86_64-unknown-linux-gnu/lychee" --offline --no-progress --include-fragments
+
+  doctrine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: tltaylor1/build-doctrine
+          ref: 110a64984ad306f4c502b571a6d359afb5cd4c81
+          path: doctrine
+          persist-credentials: false
+      - name: no retired project name in active text
+        run: python3 doctrine/scripts/check_names.py .
