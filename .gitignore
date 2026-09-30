@@ -6,3 +6,7 @@ site/
 Thumbs.db
 .vscode/
 .idea/
+
+# Compiled Python, produced by running the scripts and tests
+__pycache__/
+*.pyc
