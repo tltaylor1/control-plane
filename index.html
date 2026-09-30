@@ -43,10 +43,11 @@
   code and the documents; the person reviews and approves every
   change; every decision and every mistake is recorded. It has three
   parts.</p>
-  <p><b>build-doctrine</b> is the rulebook the program is built
-  under: standards for letting an AI agent write code that a person is
-  responsible for, with the tools that check any repository against
-  them. It carries:</p>
+  <p>build-doctrine is the rulebook for all the code. It is the
+  standards for letting an AI agent write code that a person is
+  responsible for, and it provides the tools that check any repository
+  against them.</p>
+  <p>It carries:</p>
   <ul>
     <li>Rules where each one names the problem behind it and the check
     that catches it.</li>
@@ -55,15 +56,15 @@
     <li>A vetting tool that examines a dependency before it is
     adopted.</li>
     <li>A project template with the checks already switched on.</li>
-    <li>Built against seven frameworks: OWASP Top 10, OWASP API
-    Security Top 10, OWASP Top 10 for LLM Applications, STRIDE, NIST
-    SSDF, OWASP ASVS, and SLSA. Eighty items mapped to the rules, gaps
-    listed.</li>
+    <li>Coverage of seven frameworks: OWASP Top 10, OWASP API Security
+    Top 10, OWASP Top 10 for LLM Applications, STRIDE, NIST SSDF, OWASP
+    ASVS, and SLSA. Eighty items mapped to the rules, gaps listed.</li>
   </ul>
-  <p><b>manifest-identity</b> is the application built under those
-  rules. It keeps two records about every identity in a cloud estate,
-  what access it holds and what access a named person authorized, and
-  shows every difference between them. It has:</p>
+  <p>manifest-identity is the application built under those rules. It
+  keeps two records about every identity in a cloud estate, what
+  access it holds and what access a named person authorized, and it
+  shows every difference between them.</p>
+  <p>It has:</p>
   <ul>
     <li>Seven providers read from their own export files: AWS, GitHub,
     Kubernetes, Google Cloud, Azure and Entra, Okta, Active Directory.
@@ -73,13 +74,15 @@
     <li>Twenty findings, each explaining itself: unused identities,
     keys past their age, administrators by capability, trusts open to
     the world.</li>
+    <li>A read-only API and a change feed, so other systems follow the
+    decisions.</li>
     <li>more than 400 tests, 84 recorded decisions, 34 controls proven by
     mutation, five outside ratings, a release verifiable with one
     command.</li>
   </ul>
-  <p><b>The cloud deployment</b> is the part still to build, phases 3
-  to 7: the application run in AWS the way the rulebook says. It will
-  have:</p>
+  <p>The cloud deployment is the part still to build, phases 3 to 7.
+  It is the application run in AWS the way the rulebook says.</p>
+  <p>It will have:</p>
   <ul>
     <li>An AWS organization defined as code.</li>
     <li>One account that persists; the workloads inside it torn down
@@ -94,63 +97,59 @@
   </ul>
   <p>secure-expense-mvp is a small application built before the
   program as a learning exercise, kept as a reference.</p>
+
   <h2>The parts</h2>
-  <div class="part accent">
-    <h3><a href="https://github.com/manifest-identity/manifest-identity">manifest-identity</a></h3>
-    <p>Governance for the identities nobody owns: what each identity
-    holds, read from seven providers' own exports and derived from
-    history rather than stored as a status, beside what a named person
-    said it may hold, and every difference put in front of the person
-    who can answer it. Building in motion: the decision record and the
-    record of what the coding agent got wrong, kept on purpose.</p>
-  </div>
   <div class="part">
-    <h3><a href="https://github.com/tltaylor1/secure-expense-mvp">secure-expense-mvp</a></h3>
-    <p>A small expense tool, finished and hardened: every request-path
-    gate tied to the failure it prevents, mutation-tested, deliberately
-    complete.</p>
-  </div>
-  <div class="part">
-    <h3><a href="https://github.com/tltaylor1/build-doctrine">build-doctrine</a></h3>
-    <p>The doctrine: standards where every rule records the incident
-    that produced it, and the promotion path from human check to
-    automated gate.</p>
-  </div>
-  <div class="part">
-    <h3>aws-platform</h3>
-    <p>Arrives with Phase 3: generic Terraform modules for an
-    organization, its baseline, account vending, and keyless deploy
-    federation.</p>
+    <p>The program is four repositories. Each is public, and each is
+    scored against the rulebook in its own pipeline.</p>
+    <p>They are:</p>
+    <ul>
+      <li><a href="https://github.com/manifest-identity/manifest-identity">manifest-identity</a>:
+      the application.</li>
+      <li><a href="https://github.com/tltaylor1/build-doctrine">build-doctrine</a>:
+      the rulebook, the scorer, the vetting tool, and the
+      template.</li>
+      <li>aws-platform: the cloud deployment, arriving with Phase 3 as
+      reusable Terraform modules for an organization, its baseline,
+      account vending, and keyless deploys.</li>
+      <li><a href="https://github.com/tltaylor1/secure-expense-mvp">secure-expense-mvp</a>:
+      the learning exercise from before the program, kept as a
+      reference.</li>
+    </ul>
   </div>
 
   <h2>The program documents</h2>
   <div class="part">
-    <p>The things one repository cannot answer for, kept here:</p>
+    <p>Some things no single repository can answer for. They are kept
+    here, and each carries the date it was last checked, so it goes
+    stale on a schedule rather than quietly.</p>
+    <p>They are:</p>
     <ul>
-      <li><b><a href="PHASE-3.md">The plan</a></b> for the current
-      phase, written and published before the work starts, so a change
-      of plan is a recorded decision and not a quiet edit.</li>
-      <li><b><a href="MONITORING.md">Monitoring</a></b>: what is
-      watched at each layer, what signal it gives, and who hears it. A
-      layer with nothing watching it says so.</li>
-      <li><b><a href="BCDR.md">Recovery</a></b>: what can be rebuilt
-      from code and what is real state that must be backed up. Each
-      recovery drill carries the date it last ran and goes stale on a
-      schedule.</li>
-      <li><b><a href="PIPELINES.md">Pipelines</a></b>: how every
-      repository blocks a bad change, and how the tools that do the
-      blocking are themselves verified before they run.</li>
+      <li><a href="PHASE-3.md">The plan</a> for the current phase,
+      published before the work starts, so a change of plan is a
+      recorded decision.</li>
+      <li><a href="MONITORING.md">Monitoring</a>: what is watched at
+      each layer, what signal it gives, and who hears it.</li>
+      <li><a href="BCDR.md">Recovery</a>: what is rebuilt from code
+      and what real state is backed up, with the date each drill last
+      ran.</li>
+      <li><a href="PIPELINES.md">Pipelines</a>: how every repository
+      blocks a bad change, and how the blocking tools are verified
+      before they run.</li>
     </ul>
   </div>
 
   <h2>The method</h2>
   <div class="method">
+    <p>Every change takes the same path, whichever repository it is
+    in. The agent proposes, the checks run, and a person approves.</p>
+    <p>The rules of the path:</p>
     <ul>
       <li>Design first. The plan is public before the first line of
       code.</li>
-      <li>Every change is a pull request: the agent proposes under its
-      own identity, the checks must pass, a human must approve, and
-      the merge is the receipt.</li>
+      <li>Every change is a pull request under the agent's own
+      identity. The checks must pass, a person must approve, and the
+      merge is the record.</li>
       <li>Every figure in a document is checked against the running
       system, or a test fails.</li>
       <li>Every mistake becomes a rule, and the second time a fix is
@@ -162,6 +161,11 @@
 
   <h2>The arc</h2>
   <img src="diagrams/phase-journey-sketch.svg" alt="The eight phases as a timeline, with the current position marked" style="max-width:100%; margin-bottom:1rem;">
+  <p>The program runs in eight phases, counted from zero to match the
+  repositories. Phases 0 to 2 are complete. The Phase 3 plan is
+  written in <a href="PHASE-3.md">PHASE-3.md</a>, and no Phase 3 code
+  exists yet.</p>
+  <p>The phases:</p>
   <ol class="phases" start="0">
     <li class="done">Design, before any code</li>
     <li class="done">The application: the observed half in twelve review-gated
