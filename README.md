@@ -1,28 +1,51 @@
 # control-plane
 
-One person's public record of building a security engineering
-program with an AI agent doing the typing and a human deciding
-everything.
+![control-plane: the shared platform grid behind the applications](images/control-plane-banner.png)
 
-It exists to show, with evidence rather than claims, that agent-built
-software can be held to a professional standard: every decision
-recorded with what was rejected, every control proven by a test,
-every release attested, and every agent mistake written down with
-what caught it.
+control-plane is a security engineering program that one person is
+building in public with an AI coding agent. The agent writes the code
+and the documents; the person reviews and approves every change; every
+decision and every mistake is recorded. It has three parts.
 
-What is in it:
+**build-doctrine, the rules**
 
-- **manifest-identity**: two records about every identity in a cloud
-  estate, what it holds and what a named person said it may hold, and
-  the difference between them. Seven providers read natively, any other
-  through a table; review campaigns driven by the calendar, the delta,
-  or expiry. more than 400 tests, 84 recorded decisions, five outside ratings.
-- **build-doctrine**: the rulebook the program builds under, and the
-  commands that score any repository against it.
-- **secure-expense-mvp**: a small finished application, hardened and
-  mutation-tested, kept as the reference.
-- **The program documents**: what is monitored, how recovery works,
-  how every repository is gated, and the next phase's plan.
+- Rules for letting an agent write code you are responsible for. Each
+  rule names the problem behind it and the check that catches it.
+- A scorer that grades any repository from 0 to 5 on each rule.
+- A vetting tool that examines a dependency before it is adopted.
+- A project template with the checks already switched on.
+- Built against seven frameworks: OWASP Top 10, OWASP API Security Top
+  10, OWASP Top 10 for LLM Applications, STRIDE, NIST SSDF, OWASP ASVS,
+  and SLSA. Eighty items mapped to the rules, gaps listed.
+
+**manifest-identity, the application built under those rules**
+
+- Two records for every identity in a cloud estate: what access it
+  holds, and what access a named person authorized.
+- Seven providers read from their own export files: AWS, GitHub,
+  Kubernetes, Google Cloud, Azure and Entra, Okta, Active Directory.
+  Any other provider through a table.
+- Every difference between the two records shown, and review campaigns
+  that ask the responsible person about each one.
+- Twenty findings, each explaining itself: unused identities, keys past
+  their age, administrators by capability, trusts open to the world.
+- Figures: more than 400 tests, 84 recorded decisions, 34 controls proven by
+  mutation, five outside ratings, a release verifiable with one
+  command.
+
+**The cloud deployment, phases 3 to 7, next**
+
+- An AWS organization defined as code.
+- One account that persists; the workloads inside it torn down and
+  rebuilt daily, so recovery is routine.
+- Deploys without stored credentials; the image promoted by digest.
+- The pipeline tested by planting a flaw; the cloud's own monitoring
+  switched on.
+- The ability to change a cloud account comes last, earned by
+  everything before it. Each phase's plan is published before the work.
+
+secure-expense-mvp is a small application built before the program as
+a learning exercise, kept as a reference.
 
 The rendered site is this repository, served at
 https://tltaylor1.github.io.

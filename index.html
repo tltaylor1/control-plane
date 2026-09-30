@@ -37,29 +37,59 @@
 <body>
 <main>
   <h1>control-plane</h1>
-  <p>One person's public record of building a security engineering
-  program with an AI agent doing the typing and a human deciding
-  everything.</p>
-  <p>It exists to show, with evidence rather than claims, that
-  agent-built software can be held to a professional standard: every
-  decision recorded with what was rejected, every control proven by a
-  test, every release attested, and every agent mistake written down
-  with what caught it.</p>
+  <img src="images/control-plane-banner.png" alt="control-plane: the shared platform grid behind the applications" style="max-width:100%; margin-bottom:1rem;">
+  <p>control-plane is a security engineering program that one person
+  is building in public with an AI coding agent. The agent writes the
+  code and the documents; the person reviews and approves every
+  change; every decision and every mistake is recorded. It has three
+  parts.</p>
+  <p><b>build-doctrine, the rules</b></p>
   <ul>
-    <li><b>manifest-identity</b>: two records about every identity in a
-    cloud estate, what it holds and what a named person said it may
-    hold, and the difference between them. Six providers read natively,
-    any other through a table; review campaigns driven by the calendar,
-    the delta, or expiry. more than 400 tests, 84 recorded decisions, five
-    outside ratings.</li>
-    <li><b>build-doctrine</b>: the rulebook the program builds under,
-    and the commands that score any repository against it.</li>
-    <li><b>secure-expense-mvp</b>: a small finished application,
-    hardened and mutation-tested, kept as the reference.</li>
-    <li><b>The program documents</b>: what is monitored, how recovery
-    works, how every repository is gated, and the next phase's
-    plan.</li>
+    <li>Rules for letting an agent write code you are responsible for.
+    Each rule names the problem behind it and the check that catches
+    it.</li>
+    <li>A scorer that grades any repository from 0 to 5 on each
+    rule.</li>
+    <li>A vetting tool that examines a dependency before it is
+    adopted.</li>
+    <li>A project template with the checks already switched on.</li>
+    <li>Built against seven frameworks: OWASP Top 10, OWASP API
+    Security Top 10, OWASP Top 10 for LLM Applications, STRIDE, NIST
+    SSDF, OWASP ASVS, and SLSA. Eighty items mapped to the rules, gaps
+    listed.</li>
   </ul>
+  <p><b>manifest-identity, the application built under those
+  rules</b></p>
+  <ul>
+    <li>Two records for every identity in a cloud estate: what access
+    it holds, and what access a named person authorized.</li>
+    <li>Seven providers read from their own export files: AWS, GitHub,
+    Kubernetes, Google Cloud, Azure and Entra, Okta, Active Directory.
+    Any other provider through a table.</li>
+    <li>Every difference between the two records shown, and review
+    campaigns that ask the responsible person about each one.</li>
+    <li>Twenty findings, each explaining itself: unused identities,
+    keys past their age, administrators by capability, trusts open to
+    the world.</li>
+    <li>more than 400 tests, 84 recorded decisions, 34 controls proven by
+    mutation, five outside ratings, a release verifiable with one
+    command.</li>
+  </ul>
+  <p><b>The cloud deployment, phases 3 to 7, next</b></p>
+  <ul>
+    <li>An AWS organization defined as code.</li>
+    <li>One account that persists; the workloads inside it torn down
+    and rebuilt daily, so recovery is routine.</li>
+    <li>Deploys without stored credentials; the image promoted by
+    digest.</li>
+    <li>The pipeline tested by planting a flaw; the cloud's own
+    monitoring switched on.</li>
+    <li>The ability to change a cloud account comes last, earned by
+    everything before it. Each phase's plan is published before the
+    work.</li>
+  </ul>
+  <p>secure-expense-mvp is a small application built before the
+  program as a learning exercise, kept as a reference.</p>
   <h2>The parts</h2>
   <div class="part accent">
     <h3><a href="https://github.com/manifest-identity/manifest-identity">manifest-identity</a></h3>
