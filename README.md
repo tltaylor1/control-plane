@@ -14,7 +14,7 @@ What is in it:
 
 - **manifest-identity**: an inventory and review tool for cloud service
   accounts and roles. Import snapshots, see who owns what, run review
-  campaigns. 405 tests, 82 recorded decisions, five outside ratings.
+  campaigns. more than 400 tests, 82 recorded decisions, five outside ratings.
 - **build-doctrine**: the rulebook the program builds under, and the
   commands that score any repository against it.
 - **secure-expense-mvp**: a small finished application, hardened and
