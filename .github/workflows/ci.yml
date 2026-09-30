@@ -46,7 +46,7 @@ jobs:
         run: python3 scripts/check_figures.py
       - name: forbid deferred-work markers
         run: |
-          ! grep -rnE "\b(TODO|FIXME|HACK|XXX)\b" --exclude-dir=.git --exclude-dir=.github --exclude=.pre-commit-config.yaml .
+          ! grep -rnIE "\b(TODO|FIXME|HACK|XXX)\b" --exclude-dir=.git --exclude-dir=.github --exclude=.pre-commit-config.yaml .
 
   links:
     runs-on: ubuntu-latest
