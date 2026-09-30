@@ -43,11 +43,13 @@
   code and the documents; the person reviews and approves every
   change; every decision and every mistake is recorded. It has three
   parts.</p>
-  <p><b>build-doctrine, the rules</b></p>
+  <p><b>build-doctrine</b> is the rulebook the program is built
+  under: standards for letting an AI agent write code that a person is
+  responsible for, with the tools that check any repository against
+  them. It carries:</p>
   <ul>
-    <li>Rules for letting an agent write code you are responsible for.
-    Each rule names the problem behind it and the check that catches
-    it.</li>
+    <li>Rules where each one names the problem behind it and the check
+    that catches it.</li>
     <li>A scorer that grades any repository from 0 to 5 on each
     rule.</li>
     <li>A vetting tool that examines a dependency before it is
@@ -58,16 +60,16 @@
     SSDF, OWASP ASVS, and SLSA. Eighty items mapped to the rules, gaps
     listed.</li>
   </ul>
-  <p><b>manifest-identity, the application built under those
-  rules</b></p>
+  <p><b>manifest-identity</b> is the application built under those
+  rules. It keeps two records about every identity in a cloud estate,
+  what access it holds and what access a named person authorized, and
+  shows every difference between them. It has:</p>
   <ul>
-    <li>Two records for every identity in a cloud estate: what access
-    it holds, and what access a named person authorized.</li>
     <li>Seven providers read from their own export files: AWS, GitHub,
     Kubernetes, Google Cloud, Azure and Entra, Okta, Active Directory.
     Any other provider through a table.</li>
-    <li>Every difference between the two records shown, and review
-    campaigns that ask the responsible person about each one.</li>
+    <li>Review campaigns that put each difference in front of the
+    person responsible for it, one decision at a time.</li>
     <li>Twenty findings, each explaining itself: unused identities,
     keys past their age, administrators by capability, trusts open to
     the world.</li>
@@ -75,7 +77,9 @@
     mutation, five outside ratings, a release verifiable with one
     command.</li>
   </ul>
-  <p><b>The cloud deployment, phases 3 to 7, next</b></p>
+  <p><b>The cloud deployment</b> is the part still to build, phases 3
+  to 7: the application run in AWS the way the rulebook says. It will
+  have:</p>
   <ul>
     <li>An AWS organization defined as code.</li>
     <li>One account that persists; the workloads inside it torn down
