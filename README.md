@@ -7,10 +7,13 @@ building in public with an AI coding agent. The agent writes the code
 and the documents; the person reviews and approves every change; every
 decision and every mistake is recorded. It has three parts.
 
-**build-doctrine, the rules**
+**build-doctrine** is the rulebook the program is built under:
+standards for letting an AI agent write code that a person is
+responsible for, with the tools that check any repository against
+them. It carries:
 
-- Rules for letting an agent write code you are responsible for. Each
-  rule names the problem behind it and the check that catches it.
+- Rules where each one names the problem behind it and the check that
+  catches it.
 - A scorer that grades any repository from 0 to 5 on each rule.
 - A vetting tool that examines a dependency before it is adopted.
 - A project template with the checks already switched on.
@@ -18,22 +21,24 @@ decision and every mistake is recorded. It has three parts.
   10, OWASP Top 10 for LLM Applications, STRIDE, NIST SSDF, OWASP ASVS,
   and SLSA. Eighty items mapped to the rules, gaps listed.
 
-**manifest-identity, the application built under those rules**
+**manifest-identity** is the application built under those rules. It
+keeps two records about every identity in a cloud estate, what access
+it holds and what access a named person authorized, and shows every
+difference between them. It has:
 
-- Two records for every identity in a cloud estate: what access it
-  holds, and what access a named person authorized.
 - Seven providers read from their own export files: AWS, GitHub,
   Kubernetes, Google Cloud, Azure and Entra, Okta, Active Directory.
   Any other provider through a table.
-- Every difference between the two records shown, and review campaigns
-  that ask the responsible person about each one.
+- Review campaigns that put each difference in front of the person
+  responsible for it, one decision at a time.
 - Twenty findings, each explaining itself: unused identities, keys past
   their age, administrators by capability, trusts open to the world.
 - Figures: more than 400 tests, 84 recorded decisions, 34 controls proven by
   mutation, five outside ratings, a release verifiable with one
   command.
 
-**The cloud deployment, phases 3 to 7, next**
+**The cloud deployment** is the part still to build, phases 3 to 7:
+the application run in AWS the way the rulebook says. It will have:
 
 - An AWS organization defined as code.
 - One account that persists; the workloads inside it torn down and
