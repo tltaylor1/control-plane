@@ -6,11 +6,11 @@
 <https://tltaylor1.github.io/control-plane/>.
 
 control-plane is the platform that manifest-identity and the
-applications after it run on: an AWS estate defined as code, with
-every security choice explained beside the code that makes it. It is
-built in public by one person with an AI coding agent under
-[build-doctrine](https://github.com/tltaylor1/build-doctrine), and it
-is the part of the program still to build.
+applications after it will run on, defined as an AWS estate in code
+with every security choice explained beside the code that makes it.
+The design is written, and the implementation is still to build. It
+is built in public by one person with an AI coding agent under
+[build-doctrine](https://github.com/tltaylor1/build-doctrine).
 
 It will hold:
 
