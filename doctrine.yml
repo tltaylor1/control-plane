@@ -1,0 +1,3 @@
+name_allowlist:
+  - .vale/styles/Proselint/Cliches.yml
+  - DECISIONS.md

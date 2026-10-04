@@ -1,4 +1,4 @@
-# Business continuity and disaster recovery, the program view
+# Business continuity and disaster recovery, the platform view
 
 The split that organizes everything here: what is rebuildable from
 code, and what is actual state. Rebuildable things have a recovery

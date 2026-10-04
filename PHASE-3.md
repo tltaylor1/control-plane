@@ -1,6 +1,6 @@
 # Phase 3: the cloud enclave as code
 
-The third phase moves the program onto a real cloud account, as code,
+The third phase moves manifest-identity onto a real cloud account, as code,
 with the account's own posture held to the same standard as the code's.
 This is the public plan, fixed before the work; discoveries during the
 build become recorded decisions, not silent amendments.

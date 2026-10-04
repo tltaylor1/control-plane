@@ -83,5 +83,5 @@ The gates every repository shares, what a platform repository adds,
 and this posture in full are in build-doctrine's enforcement record,
 under [Every repository's pipeline](https://tltaylor1.github.io/build-doctrine/02-enforcement/#every-repositorys-pipeline).
 
-The program as a whole, its rulebook, its application, and this
-platform, is mapped at <https://tltaylor1.github.io>.
+build-doctrine, manifest-identity, and this
+platform together are mapped at <https://tltaylor1.github.io>.
