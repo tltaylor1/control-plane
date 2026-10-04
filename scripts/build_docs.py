@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REPO_URL = "https://github.com/tltaylor1/control-plane"
-# Reading order: the program's page, then the documents no single
+# Reading order: the platform's page, then the documents no single
 # repository can answer for. A test holds that every root document
 # has a place here.
 PAGES = [

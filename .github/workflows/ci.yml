@@ -1,7 +1,7 @@
 # The platform repository's gates: the writing rules and the link check
 # over the documents, and the marker sweep. Tools arrive from their
 # canonical releases and are checksum-verified before they run, the
-# same bar as every repository in the program.
+# same bar as every repository built under build-doctrine.
 name: checks
 
 permissions:
@@ -73,7 +73,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: tltaylor1/build-doctrine
-          ref: a235068d87c618bc7d8b70cf83a52c071056df80
+          ref: 3a9e72d874aae4244836e3f877458c639f4faf6e
           path: doctrine
           persist-credentials: false
       - name: no retired project name in active text

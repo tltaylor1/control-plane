@@ -1,4 +1,4 @@
-# Commit-time gates, matching the program's other repositories: the
+# Commit-time gates, matching the other repositories built under build-doctrine: the
 # secret scan, the writing rules, and the deferred-work marker check.
 # CI runs the same checks, which catches any commit made without the
 # hooks installed.

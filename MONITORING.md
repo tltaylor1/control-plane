@@ -1,4 +1,4 @@
-# Monitoring, the program view
+# Monitoring, the platform view
 
 What is watched at each layer, what signal it produces, and who hears
 it. This is the frame; each phase of the build fills its layer, and a
